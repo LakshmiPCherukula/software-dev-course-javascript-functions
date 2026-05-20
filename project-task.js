@@ -33,18 +33,44 @@ This activity reinforces:
 // ============================================
 
 // Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
+//console.log("Welcome, Alice!");
+//console.log("Welcome, Bob!");
+//console.log("Welcome, Charlie!");
+
+//After Refactoring
+function greet(name){
+   console.log(`welcome, ${name}!');
+}    
+greet("Alice");
+greet("Bob");
+greet("Charlie");
+let greeting = greet("David");
+console.log(greeting);
 
 // Script 2 - Sum calculation
 let num1 = 5, num2 = 10;
 let sum = num1 + num2;
 console.log("The sum of 5 and 10 is " + sum);
+function addNumbers(a,b){
+let sum = a + b;
+console.log("The sum of ${a} and ${b} is ${sum});
+return sum;
+}
+addnumbers(4,5);
+
 
 // Script 3 - Product calculation
 let product = num1 * num2;
 console.log("The product of 5 and 10 is " + product);
+function multiplyNumbers(a, b) {
+    let product = a * b;
+    console.log(`The product of ${a} and ${b} is ${product}`);
+    return product;
+}
+multiplyNumbers(num1, num2);
+multiplyNumbers(num3, num4);
+console.log(multiplyNumbers(2, 24));
+
 
 // Script 4 - Print names from a list
 let names = ["Alice", "Bob", "Charlie"];
@@ -52,7 +78,27 @@ console.log("Names in the list:");
 for (let i = 0; i < names.length; i++) {
     console.log(names[i]);
 }
+let moreNames = ["David", "Emma", "Fred"];
 
+function printNames(nameList) {
+    console.log("Names in the list:");
+    for (let name of nameList) {
+        console.log(name);
+    }
+}
+
+printNames(names);
+printNames(moreNames);
+
+// BONUS! Reuse one function within another
+function greetAll(nameList) {
+    for (let name of nameList) {
+        greet(name);
+    }
+}
+
+greetAll(names);
+greetAll(moreNames);
 /*
 ===========================================
 🛠️ Steps for Refactoring
